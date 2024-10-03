@@ -1,0 +1,103 @@
+
+
+:root {
+   --negro: #000000 ;
+   --amarillo: #FFC917 ;
+   --vinotinto: #8C0000 ;
+   --beige: #FAF3CD ;
+   --beige-claro: #FEFAEC ;
+   --blanco: #ffffff ;
+   --gris: #D9D9D9 ;
+   --gris-oscuro: #5c5b5b ;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    margin: 0;
+    font-size: 16px;
+    background-color: var(--beige-claro);
+}
+.producto-pro{
+    width: 80%;
+    margin: 5rem auto;
+    font-family: "Oswald", sans-serif;
+    background-color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30rem;
+}
+.img-producto-pro{
+    width: 90%;
+    margin: 5%;
+}
+.producto-descrip{
+    margin: 5%;
+    width: 90%;
+}
+.title-producto-pro{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+.descrip-producto-pro{
+    font-size: 3rem;
+    margin: 0;
+    width: 70%;
+}
+.corazon{
+    width: 7.5%;
+}
+.img-corazon{
+    width: 100%;
+}
+.medida-titulo{
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+.medida-boton{
+    padding: 1rem;
+    border: none;
+    background-color: var(--amarillo);
+    font-size: 2rem;
+    font-family: "Oswald", sans-serif;
+    margin: 0.5rem;
+}
+.precio-pro{
+    font-size: 5rem;
+    margin: 0;
+}
+.envio-pro{
+    color: var(--vinotinto);
+    margin-top: 1rem;
+    font-size: 3rem;
+}
+.comprar-pro{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4rem;
+}
+.boton-comprar-pro{
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    border: transparent;
+    background-color: var(--vinotinto);
+    color: var(--amarillo);
+    padding: 1rem 5rem;
+}
+@media(min-width: 950px){
+    .producto-pro{
+        display: flex;
+        flex-direction: row;
+    }
+    .img-producto-pro{
+        width: 45%;
+        margin: 2.5%;
+    }
+    .producto-descrip{
+        margin: 2.5%;
+        width: 47.5%;
+        margin-left: 0;
+    }
+}

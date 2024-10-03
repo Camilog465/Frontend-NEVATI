@@ -27,7 +27,11 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/normalize.css",
+              "src/styles.css",
+              "src/main.css",
+              "src/catalogo-sabanas.css",
+              "src/producto.css"
             ],
             "scripts": []
           },
@@ -85,7 +89,11 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/normalize.css",
+              "src/styles.css",
+              "src/main.css",
+              "src/catalogo-sabanas.css",
+              "src/producto.css"
             ],
             "scripts": []
           }
