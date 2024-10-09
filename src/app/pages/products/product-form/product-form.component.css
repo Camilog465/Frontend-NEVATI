@@ -1,0 +1,16 @@
+form {
+    border: 1px dotted;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        margin: .5rem 0;
+        width: 100%;
+    }
+}

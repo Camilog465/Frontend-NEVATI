@@ -1,20 +1,77 @@
-<ul class="menu menu-main">
-    <li>
-        <a [routerLink]="['/home']" routerLinkActive="Active">home</a>
-    </li>
-    <li>
-        <a [routerLink]="['/register']"routerLinkActive="Active">register</a>
-    </li>
-    <li>
-        <a [routerLink]="['/product-list']"routerLinkActive="Active">product</a>
-    </li>
-    <li>
-        <a [routerLink]="['/product-detail']"routerLinkActive="Active">product detail</a>
-    </li>
-    <li>
-        <a [routerLink]="['/login']"routerLinkActive="Active">login</a>
-    </li>
-    
-</ul>
 
-
+    <a class="logo" href="./index.html">
+        
+        <img src="assets/images/Captura_de_pantalla_2024-07-19_184334-removebg-preview1.png" alt="nevatihome">
+    </a>        
+    <div class="menu-hamburguesa">
+        <img src="assets/images/Vector4.png" alt="">
+    </div>
+    <div class="menu">
+        <div class="menu-items">
+            <ul class="menu-items-principal">
+                <li class="items">
+                    <a class="items-menu" href="./catalogo-sabanas.html">
+                        SABANAS
+                    </a>
+                </li>
+                <li class="items l">
+                    <a class="items-menu" href="#">
+                        COLCHA ESPAÑOLA
+                    </a>
+                </li>
+                <li class="items">
+                    <a class="items-menu" href="#">
+                        ACCESORIOS
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-accesibilidad">
+            <div class="ayuda">
+                <ul class="menu-ayuda">
+                    <li>
+                        <a class="comunicate comu" href="#">
+                            COMUNICATE CON NOSOTROS
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link-ayuda comu" href="#">
+                            AYUDA
+                        </a>
+                    </li>
+                    <li class="accesibilidad">
+                        <a href="#">
+                            <img src="assets/images/image5.png" alt="accesibilidad">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-buscador">
+                <form class="buscador">
+                    <div class="buscar">
+                        <input class="busca" type="text" placeholder="BUSCAR...">
+                    </div>
+                    <button class="lupa">
+                        <img src="assets/images/image3.png" alt="buscar">
+                    </button>
+                </form>
+                <ul class="menu-usuario">
+                    <li class="me-gusta">
+                        <a href="#">
+                            <img src="assets/images/fi-rs-heart.png" alt="">
+                        </a>
+                    </li>
+                    <li class="usuario">
+                        <a [routerLink]="['login']" routerLinkActive="Active" >
+                            <img src="assets/images/fi-rs-user.png" alt="">
+                        </a>
+                    </li>
+                    <li class="carro">
+                        <a href="#">
+                            <img src="assets/images/fi-rs-shopping-cart.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

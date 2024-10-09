@@ -1,1 +1,68 @@
-<p>login works!</p>
+<form 
+    [formGroup]="formData"
+    (ngSubmit)="handleSubmit()"
+    class="form form-login"
+>
+    <h1>Login</h1>
+    <div class="form-content">
+        <div class="field">
+            <label for="username">Email*</label>
+            <input 
+                type="email" 
+                id="username" 
+                formControlName="username"
+            />
+            <div class="error">
+                <!-- Validar los estados del campo input >> name -->
+                @if( formData.get( 'username' )?.invalid && ( formData.get( 'username' )?.dirty || formData.get( 'username' )?.touched ) ) {
+                    <!-- Valida la regla: Validators.required -->
+                    @if( formData.get( 'username' )?.errors?.[ 'required' ] ) {
+                        <small>El campo 'email' es obligatorio</small>
+                    }
+                    <!-- Valida la regla: Validators.email -->
+                    @if( formData.get( 'username' )?.errors?.[ 'email' ] ) {
+                        <small>Email con formato no valido</small>
+                    }
+                }
+            </div>
+        </div>
+        <div class="field">
+            <label for="password">Password*</label>
+            <input 
+                type="password" 
+                id="password" 
+                formControlName="password"
+            />
+            <div class="error">
+                <!-- Validar los estados del campo input >> name -->
+                @if( formData.get( 'password' )?.invalid && ( formData.get( 'password' )?.dirty || formData.get( 'password' )?.touched ) ) {
+                    <!-- Valida la regla: Validators.required -->
+                    @if( formData.get( 'password' )?.errors?.[ 'required' ] ) {
+                        <small>El campo 'password' es obligatorio</small>
+                    }
+                    <!-- Valida la regla: Validators.min -->
+                    @if( formData.get( 'password' )?.errors?.[ 'minlength' ] ) {
+                        <small>El password debe tener minimo 8 caracteres</small>
+                    }
+                    <!-- Valida la regla: Validators.max -->
+                    @if( formData.get( 'password' )?.errors?.[ 'maxlength' ] ) {
+                        <small>El password debe tener maximo 20 caracteres</small>
+                    }
+                }
+            </div>
+        </div>
+        
+    
+        <div class="field">
+            <button 
+                type="submit"
+                [disabled]="formData.invalid"
+            >Iniciar sesión</button>
+        </div>
+        
+        <div class="button">
+            <a [routerLink]="['/register']" routerLinkActive="Active" > Crear cuenta nueva </a>
+            
+        </div>
+    </div>
+</form>
