@@ -1,3 +1,36 @@
 form.form.form-login.ng-untouched.ng-pristine.ng-invalid {
-    margin-bottom: 9rem;
+    margin: 12%;;
+}
+.form h1 {
+    text-align: center;
+}
+.form-content {
+    border: 1px dotted;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        margin: .5rem 0;
+        width: 100%;
+    }
+
+    .error {
+        height: 1rem;
+        color: red;
+        font-style: italic;
+    }
+    .button {
+      font-size: 14px;
+      height: 30px;
+      margin: inherit;
+      padding: 11px;
+      
+  }
+ 
 }

@@ -1,0 +1,562 @@
+
+
+:root {
+    --negro: #000000 ;
+    --amarillo: #FFC917 ;
+    --vinotinto: #8C0000 ;
+    --beige: #FAF3CD ;
+    --beige-claro: #FEFAEC ;
+    --blanco: #ffffff ;
+    --gris: #D9D9D9 ;
+    --gris-oscuro: #5c5b5b ;
+  }
+  html{
+     font-size: 62.5%;
+  }
+  body{
+     margin: 0;
+     font-size: 16px;
+  }
+  .header{
+     list-style: none;
+     text-decoration: none;
+     font-family: "Oswald", sans-serif;
+     font-size: 2rem;
+     display: flex;
+     background-color: var(--beige);
+     padding: 0.5rem;
+     justify-content: space-between;
+  }
+  .menu-hamburguesa{
+     margin: 2.5rem;
+  }
+  .menu{
+     list-style: none;
+     text-decoration: none;
+     display: none;
+     width: 100%;
+  }
+  @media(min-width: 768px){
+     .menu-hamburguesa{
+         display: none;
+     }
+     .menu{
+         display: flex;
+         width: 100%;
+     }
+     .menu-items-principal{
+         display: flex;
+         justify-content: center;
+         margin: 4.2rem 5rem 2rem 5rem;
+         padding: 0rem;
+         background-color: #FFC917;
+     }
+     .menu-items {
+         width: 65%;
+     }
+     a.items-menu{
+         text-decoration: none;
+         font-weight: 400;
+         color: #000000;
+         font-size: 1.6rem;
+     }
+     .items{
+         display: flex;
+         padding: 1rem;
+         width: 33.3%;
+         justify-content: center;
+     }
+     .l{
+         border-left: 0.1rem solid var(--negro);
+         border-right: 0.1rem solid var(--negro) ;
+     }
+     .menu-accesibilidad {
+         width: 35%;
+     }
+     .menu-ayuda{
+         list-style: none;
+         display: flex;
+         margin: 0rem 1.5rem 0rem 0rem;
+         padding: 0;
+         justify-content: space-between;
+     
+     }
+     a.comu{
+         font-size: 1.6rem;
+         font-weight: 200;
+         text-decoration: underline;
+         color: #8C0000;
+     }
+     .menu-buscador{
+         display: flex;
+         align-items: center;
+     }
+     .buscar {
+         width: 100%;
+     }
+     .buscador{
+         display: flex;
+         height: 3.6rem;
+         margin: 1.4rem; 
+         width : 65%;
+         justify-content: space-between;
+     }
+     input.busca {
+         font-family: "Oswald", sans-serif;
+         font-size: 1.6rem;
+         width: 100%;
+         padding: 0.5rem;
+         border: transparent;
+     }
+     button.lupa {
+         padding: 0.1rem;
+         height: 3.4rem;
+         border: transparent;
+         background-color: white;
+     }
+     input{
+         font-family: "Oswald", sans-serif;
+     }
+     .menu-usuario{
+         list-style: none;
+         display: none;
+         padding: 0;
+         margin: 1rem;
+         justify-content: space-around;
+     }
+     li.me-gusta{
+         margin: 0.5rem;
+         height: 3.2rem;
+     }
+     li.usuario{
+         margin: 0.5rem;
+         height: 3.2rem;
+     }
+     li.carro{
+         margin: 0.5rem;
+         height: 3.2rem;
+     }
+     .link-ayuda{
+         margin: 0rem 0.5rem 0rem 0rem;
+     }
+  }
+  @media(min-width: 1133px){
+     .menu-ayuda{
+         display: flex;
+         margin: 0rem 1.5rem 0rem 7rem;
+         padding: 0;
+         justify-content: space-between;
+     
+     }
+     .link-ayuda{
+         margin: auto;
+     }
+     .menu-usuario{
+         display: flex;
+     }
+  }
+  .nosotros{
+     background-image: url('../../../../public/assets/images/image1.png');
+     background-repeat: no-repeat;
+     width: 100%;
+     background-position-x: center;
+     background-size: cover;
+     display: flex;
+  } 
+  
+  .text-box {
+     width: 60%;
+     margin: 10rem auto;
+     background-color: rgba(0, 0, 0, .5);
+     color: white;
+  }
+  .Infography {
+     display: block;
+     margin: 5rem;
+  }
+  
+  article.title {
+     font-family: "Poiret One", sans-serif;
+     font-size: 2.6rem;
+     margin: 0;
+  }
+  .content {
+     font-size: 2.2rem;
+     font-family: "Oswald", sans-serif;
+     font-weight: 200;
+     margin-top: 5rem;
+     letter-spacing: 0.2rem;
+  }
+  .content-1{
+     display: none;
+  }
+  .content-3{
+     background-color: var(--gris-oscuro);
+     color: var(--blanco);
+     border: transparent;
+     font-family: "Oswald", sans-serif;
+     font-size: 1.6rem;
+     font-weight: 500;
+     padding: 1rem;
+  }
+  
+  @media ( min-width: 400px ) {
+  
+     article.title {
+         font-size: 3.4rem;
+     }
+     
+  }
+  
+  @media ( min-width: 550px ) {
+     .content-1{
+         display: block;
+     }
+     .content-2{
+         display: none;
+     }
+     
+  }
+  
+  @media ( min-width: 600px ) {
+  
+     article.title {
+         font-size: 4.8rem;
+     }
+     
+  }
+  
+  @media ( min-width: 1500px ) {
+     .text-box {
+         width: 50%;
+         margin: 10rem auto;
+         background-color: rgba(0, 0, 0, .5);
+         color: white;
+     }
+  }
+  
+  .black-friday{
+     background-image: url('../../../../public/assets/images/image24.png' );
+     background-repeat: no-repeat;
+     background-position-x: center;
+     background-size: cover;
+     width: 100%;
+     height: 100%;
+  }
+  .black-friday-1{
+     width: 90%;
+     margin: auto;
+     font-family: "Oswald", sans-serif;
+  }
+  
+  .black-friday-title{
+     color: var(--amarillo);
+     font-size: 10.8rem;
+     font-weight: 500;
+     margin: 0;
+     letter-spacing: 0.7rem;
+  }
+  .black-friday-p{
+     color: var(--amarillo);
+     font-size: 4.4rem;
+     font-weight: 500;
+     margin: 0;
+     letter-spacing: 0.5rem;
+  }
+  button.black-friday-compar{
+     border: transparent;
+     background-color: var(--amarillo);
+     padding: 1rem 3rem;
+     font-family: "Oswald", sans-serif;
+     color: var(--vinotinto);
+     font-size: 2rem;
+     font-weight: 500;
+     margin: 3rem 0 3rem 0 ;
+     letter-spacing: 0.3rem;
+  }
+  
+  @media ( min-width: 430px ) {
+     .black-friday-title{
+         color: var(--amarillo);
+         font-size: 12.8rem;
+         font-weight: 500;
+         margin: 0;
+         letter-spacing: 0.7rem;
+     }
+     .black-friday-p{
+         color: var(--amarillo);
+         font-size: 6.4rem;
+         font-weight: 500;
+         margin: 0;
+         letter-spacing: 0.5rem;
+     }
+     button.black-friday-compar{
+         border: transparent;
+         background-color: var(--amarillo);
+         padding: 1rem 3rem;
+         font-family: "Oswald", sans-serif;
+         color: var(--vinotinto);
+         font-size: 4rem;
+         font-weight: 500;
+         margin: 3rem 0 3rem 0 ;
+         letter-spacing: 0.3rem;
+     }
+  }
+  .productos-titulo{
+     display: flex;
+     font-family: "Oswald", sans-serif;
+     color: var(--vinotinto);
+     justify-content: center;
+     font-size: 3rem;
+  }
+  .productos{
+     display: block;
+     font-family: "Oswald", sans-serif;
+     width: 90%;
+     background-color: var(--beige);
+     margin: auto;
+  }
+  .productos-1{
+     padding: 1rem 0;
+     display: block;
+     width: 100%;
+  }
+  .productos-2{
+     padding: 1rem 0;
+     display: block;
+     width: 100%;
+  }
+  .producto{
+     width: 80%;
+     margin: 10%;
+     text-decoration: none;
+     color: var(--negro);
+     display: block;
+  }
+  .img-producto{
+     width: 100%;
+  }
+  .title-producto{
+     font-size: 1.6rem;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 1rem;
+  }
+  .descrip-producto{
+     margin: 0;
+     width: 70%;
+  }
+  .precio{
+     font-size: 3.8rem;
+     margin: 0;
+  }
+  .envio{
+     color: var(--vinotinto);
+     margin-top: 1rem;
+  }
+  @media (min-width: 450px){
+     .productos-titulo{
+         font-size: 3.4rem;
+     }
+     .productos{
+         display: block;
+     }
+     .productos-1{
+         display: flex;
+         width: 100%;
+     }
+     .productos-2{
+         display: flex;
+         width: 100%;
+     }
+     .producto{
+         width: 40%;
+         margin: 5%;
+         display: block;
+     }
+  }
+  @media (min-width: 750px){
+     .productos-titulo{
+         font-size: 4rem;
+     }
+     .productos{
+         display: flex;
+     }
+     .productos-1{
+         display: flex;
+         width: 50%;
+     }
+     .productos-2{
+         display: flex;
+         width: 50%;
+     }
+     .producto{
+         width: 40%;
+         margin: 5%;
+         display: block;
+     }
+  }
+  .pintas{
+     font-family: "Oswald", sans-serif;
+     color: var(--vinotinto);
+     display: flex;
+     justify-content: center;
+     margin: 4rem;
+  }
+  .titulo-pintas{
+     text-align: center;
+     margin: 1rem;
+     font-size: 4rem;
+     font-weight: 400;
+  }
+  .descrip-pintas{
+     text-align: center;
+     margin: 1rem;
+     font-size: 2.4rem;
+     font-weight: 400;
+  }
+  /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --scrollcolor: #fff;
+    --scrollbackground: #141e27;
+    --negro: #000000 ;
+    --amarillo: #FFC917 ;
+    --vinotinto: #8C0000 ;
+    --beige: #FAF3CD ;
+    --beige-claro: #FEFAEC ;
+    --blanco: #ffffff ;
+    --gris: #D9D9D9 ;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html, body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+  }
+  body {
+    background:var(--beige-claro);
+  }
+  .title {
+    font-size: 2.5rem;
+    font-family: system-ui;
+    font-weight: 300;
+    color: #fff;
+    margin: 4rem auto 1rem;
+    width: 85%;
+    max-width: 1280px;
+  }
+  .slider {
+    height: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .slider__content {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    padding-bottom: 1rem;
+    scrollbar-color: var(--beige-claro) var(--beige-claro);
+  }
+  .slider__content::-webkit-scrollbar {
+    width: 0.5rem;
+    border-radius: 1rem;
+    background: var(--scrollbackground);
+  }
+  .slider__content::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: var(--scrollcolor);
+  }
+  .slider__content::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    background: var(--scrollbackground);
+  }
+  .slider__item {
+    min-height: 500px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 100%;
+    width: 100%;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1;
+  }
+  @media (min-width: 460px) {
+    .slider__item {
+      aspect-ratio: 0.6666666667;
+      min-width: calc((60% / 2) - 2rem);
+   }
+  }
+  @media (min-width: 940px) {
+    .slider__item {
+      min-width: calc((60% / 3) - 4rem);
+   }
+  }
+  .slider__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .slider__info {
+    position: relative;
+    padding: 4rem 2rem 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(32, 50, 57, 0));
+  }
+  .slider__info h2 {
+    color: #fff;
+    font-family: system-ui;
+    line-height: 1.1;
+    font-weight: 300;
+    font-size: 1.75rem;
+    margin: 0;
+  }
+  .slider__nav {
+    margin: 1rem 0 4rem;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  @media (min-width: 460px) {
+    .slider__nav {
+      justify-content: flex-end;
+   }
+  }
+  .slider__nav__button {
+    margin: 0;
+    appearance: none;
+    border: 0;
+    border-radius: 2rem;
+    background: #fff;
+    color: #203239;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    pointer-events: none;
+    transition: 0.2s ease-out;
+    opacity: 0.25;
+  }
+  .slider__nav__button--active {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  
+
+  .form h1 {
+    text-align: center;
+}
+
