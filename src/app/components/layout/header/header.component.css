@@ -88,6 +88,7 @@
         width: 100%;
         padding: 0.5rem;
         border: transparent;
+        height: 2.4rem;
     }
     button.lupa {
         padding: 0.1rem;
@@ -104,23 +105,27 @@
         padding: 0;
         margin: 1rem;
         justify-content: space-around;
+        width: 50%;
     }
     li.me-gusta{
         margin: 0.5rem;
         height: 3.2rem;
+        width: 25%;
     }
     li.usuario{
         margin: 0.5rem;
         height: 3.2rem;
+        width: 25%;
     }
     li.carro{
         margin: 0.5rem;
         height: 3.2rem;
+        width: 25%;
     }
-    img.admin{
-        margin: 0.8rem;
-        width: 14%;
-        
+    li.abmin{
+        margin: 0.5rem;
+        height: 3.2rem;
+        width: 25%;
     }
     .link-ayuda{
         margin: 0rem 0.5rem 0rem 0rem;

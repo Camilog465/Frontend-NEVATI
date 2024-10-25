@@ -1,17 +1,19 @@
 
 .footer{
-    display: flex;
     background-color: var(--vinotinto);
     width: 80%;
     margin: 6rem auto;
-    justify-content: space-around;
+ }
+ .footer1{
+   display: flex;
+   justify-content: space-between;
  }
  div.footer{
     margin-bottom: 0;
  }
  .contactanos{
     font-size: 3.2rem;
-    margin: 8rem 5rem ;
+    margin: 6rem 5rem 1rem 5rem;
     font-family: "Oswald", sans-serif;
     color: var(--amarillo);
     width: 45%;
@@ -21,7 +23,11 @@
     color: var(--amarillo);
  }
  li.politicas-items{
-    margin: 2rem;
+    margin: 4rem;
+ }
+ .posicion{
+   display: flex;
+   justify-content: space-around;
  }
  .vermas{
     background-color: var(--amarillo);
@@ -30,20 +36,14 @@
     font-size: 2.4rem;
     letter-spacing: 0.3rem;
     font-weight: 500;
+    padding: 1rem 2rem;
+    margin: 2rem;
  }
  .k{
     display: none;
  }
  div.rym{
     border: none;
- }
- .posicion-1 {
-    position: relative;
-    bottom: 41.8rem;
- }
- .posicion-2 {
-    position: relative;
-    bottom: 42.2rem;
  }
  .piedepagina{
     font-family: "Oswald", sans-serif;
@@ -57,10 +57,17 @@
  .emojis-1{
     display: none;
  }
+ .d{
+   display: none;
+ }
  @media ( min-width: 665px ) {
+
     .k{
         display: block;
     }
+    .d{
+      display: block;
+  }
     div.rym{
         border-left:solid 0.3rem #FFC917;
         padding-left: 5rem;
@@ -74,34 +81,5 @@
     }
     .emojis-1{
         display: block;
-    }
-    .posicion-1 {
-        position: relative;
-        bottom: 44.8rem;
-    }
-    .posicion-2 {
-        position: relative;
-        bottom: 40rem;
-    }
  }
- @media ( min-width: 1562px ) {
-    .posicion-1 {
-        position: relative;
-        bottom: 40rem;
-    }
-    .posicion-2 {
-        position: relative;
-        bottom: 40rem;
-    }
- }
- 
- @media ( min-width: 1600px ) {
-    .posicion-1 {
-        position: relative;
-        bottom: 40rem;
-    }
-    .posicion-2 {
-        position: relative;
-        bottom: 40rem;
-    }
- }
+}

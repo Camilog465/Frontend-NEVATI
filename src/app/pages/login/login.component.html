@@ -11,6 +11,7 @@
                 type="email" 
                 id="username" 
                 formControlName="username"
+                class="formulario"
             />
             <div class="error">
                 <!-- Validar los estados del campo input >> name -->
@@ -32,6 +33,7 @@
                 type="password" 
                 id="password" 
                 formControlName="password"
+                class="formulario"
             />
             <div class="error">
                 <!-- Validar los estados del campo input >> name -->
@@ -55,13 +57,14 @@
     
         <div class="field">
             <button 
+                class="inicio"
                 type="submit"
                 [disabled]="formData.invalid"
             >Iniciar sesión</button>
         </div>
         
         <div class="button">
-            <a [routerLink]="['/register']" routerLinkActive="Active" > Crear cuenta nueva </a>
+            <a class="register" [routerLink]="['/register']" routerLinkActive="Active" > Crear cuenta nueva </a>
             
         </div>
     </div>

@@ -1,23 +1,49 @@
+:root {
+    --scrollcolor: #fff;
+    --scrollbackground: #141e27;
+    --negro: #000000 ;
+    --amarillo: #FFC917 ;
+    --vinotinto: #8C0000 ;
+    --beige: #FAF3CD ;
+    --beige-claro: #FEFAEC ;
+    --blanco: #ffffff ;
+    --gris: #D9D9D9 ;
+  }
 form.form.form-login.ng-untouched.ng-pristine.ng-invalid {
-    margin: 12%;;
+    padding: 1% 10% 1% 10%;
+    background-image: url('../../../../public/assets/images/Captura\ de\ pantalla\ 2024-10-24\ 201548\ 1.png');
 }
 .form h1 {
     text-align: center;
+    color: var(--vinotinto);
+    font-family: "Poiret One", sans-serif;
+    font-size: 7rem;
+}
+.formulario{
+    font-family: "Oswald", sans-serif;
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: transparent;
+    height: 2.4rem;
 }
 .form-content {
-    border: 1px dotted;
     width: 300px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    color: var(--vinotinto);
 
     .field {
         display: flex;
         flex-direction: column;
         margin: .5rem 0;
         width: 100%;
+        
     }
 
     .error {
@@ -26,11 +52,31 @@ form.form.form-login.ng-untouched.ng-pristine.ng-invalid {
         font-style: italic;
     }
     .button {
-      font-size: 14px;
-      height: 30px;
-      margin: inherit;
-      padding: 11px;
-      
+        border: transparent;
+        background-color: var(--amarillo);
+        padding: 1rem 3rem;
+        font-family: "Oswald", sans-serif;
+        color: var(--vinotinto);
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 3rem 0 3rem 0 ;
+        width: 80%;
+        text-align: center;
+
   }
- 
+  .inicio{
+    border: transparent;
+    color: var(--amarillo);
+    padding: 1rem 3rem;
+    font-family: "Oswald", sans-serif;
+    background-color: var(--vinotinto);
+    font-size: 2rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+  }
+  .register{
+    color: var(--vinotinto);
+    text-decoration: none;
+  }
 }
