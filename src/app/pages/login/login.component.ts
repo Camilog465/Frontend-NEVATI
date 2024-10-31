@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../services/auth.service'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,8 @@ import { AuthService } from '../../services/auth.service'
 export class LoginComponent {
   formData!: FormGroup;
   message: string|undefined;
+  suscrption !: Subscription;
+  
 
   constructor(private authservice: AuthService) {
     this.formData = new FormGroup({
@@ -20,11 +23,24 @@ export class LoginComponent {
       password: new FormControl( '', [ Validators.required, Validators.minLength( 8 ), Validators.maxLength( 20 ) ] )
     });
   }
+  ngOnChanges (changes: SimpleChanges): void {
+    console.log('ngonchanges');
+  }
+  ngOnInit (): void {
+    console.log('ngoninit');
+  }
+  ngOnDestroy (): void {
+    console.log('ngondestroy');
+    if(this.suscrption){
+      this.suscrption.unsubscribe ()
+    }
+    
+  }
 
    handleSubmit() {
      if( this.formData.valid ) {
       console.log(this.formData.value);
-      this.authservice.loginUser (this.formData.value).subscribe((data) => {
+      this.suscrption = this.authservice.loginUser (this.formData.value).subscribe((data) => {
        console.log(data);
        //this.message = data;
        setTimeout(()=>{
@@ -36,6 +52,7 @@ export class LoginComponent {
     
      }
    } 
+   
  }  
     
     

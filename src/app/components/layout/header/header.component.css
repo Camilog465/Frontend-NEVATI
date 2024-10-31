@@ -1,3 +1,14 @@
+:root {
+    --scrollcolor: #fff;
+    --scrollbackground: #141e27;
+    --negro: #000000 ;
+    --amarillo: #FFC917 ;
+    --vinotinto: #8C0000 ;
+    --beige: #FAF3CD ;
+    --beige-claro: #FEFAEC ;
+    --blanco: #ffffff ;
+    --gris: #D9D9D9 ;
+  }
 .header{
     list-style: none;
     text-decoration: none;
@@ -122,10 +133,76 @@
         height: 3.2rem;
         width: 25%;
     }
-    li.abmin{
+    li.admin{
         margin: 0.5rem;
         height: 3.2rem;
         width: 25%;
+    }
+   /* Oculta estos elementos */
+    #toggle-main-menu,
+    .main-menu__close,
+    .background {
+        display: none;
+    }
+
+    /** Crea interaccion  */
+    #toggle-main-menu:checked ~ .main-menu__close,
+    #toggle-main-menu:checked ~ .background,
+    #toggle-main-menu:checked ~ .main-menu {
+        display: block;
+    }
+
+    #toggle-main-menu:checked ~ .main-menu__open {
+        display: none;
+    }
+    .main-menu__container {
+        flex-basis: 75%;
+        text-align: right;
+    }
+    .background {
+        background: #00000050;
+        position: absolute;
+        top: var( --header-height );
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - var( --header-height ) );
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: var( --header-height );
+    }
+    
+    .main-menu {
+        align-items: center;
+        background: var(--beige);
+        display: none;
+        gap: .5rem;
+        justify-content: end;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 5%;
+        top: var( --header-height );
+    }
+    
+    .menu-item a {
+        color: var( --color-menu-link );
+        font-size: 1.7rem;
+        text-decoration: none;
+        display: block;
+        padding: 1.2rem 2.4rem;
+        border-bottom: 1px solid;
+    }
+    .menu-item a:hover {
+        color: gray;
+    }
+    ul.main-menu.main-menu__container {
+        position: absolute;
+        top: 11rem;
+        right: 0rem;
     }
     .link-ayuda{
         margin: 0rem 0.5rem 0rem 0rem;

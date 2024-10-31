@@ -8,25 +8,42 @@ import { Product } from '../interfaces/product';
   providedIn: 'root'
 })
 export class ProductService {
+    private token;
+    private headers!: HttpHeaders;
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+        this.token = localStorage.getItem ('token') || '';
+        this.headers = new HttpHeaders ().set ('X-token',this.token)
+     }
 
-  registerProduct(productData: Product): Observable<{ success: boolean, msg: string }> {
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders({
-        'X-Token': token ? token : '',
-    });
+    getAllProducts(){
+        return this.http.get<any>('http://localhost:3000/api/products')
+    }
 
-    return this.http.post<{ success: boolean, msg: string }>('http://localhost:3000/api/products', productData, { headers })
+    registerProduct(productData: Product): Observable<any> {
+         return this.http.post<any>('http://localhost:3000/api/products', productData, {headers:this.headers})
         .pipe(
             tap((response) => {
                 console.log('Respuesta del servidor:', response); // Imprimir la respuesta del servidor
             }),
             catchError(error => {
                 console.error('Error al registrar el producto:', error);
-                return of({ success: false, msg: 'Error al registrar producto' });
+                return of('Error al registrar el producto');
             })
         );
-}
+    }
 
+    deleteProduct (id: any){
+        return this.http.delete ('http://localhost:3000/api/products/'+(id), {headers:this.headers})
+
+    }
+
+    getProductById (id: any){
+        return this.http.get <any> ('http://localhost:3000/api/products/'+(id), {headers:this.headers})
+    }
+
+    updateProduct (id:any, data: any){
+       return this.http.patch <any> ('http://localhost:3000/api/products/'+(id), data, {headers:this.headers})
+
+    }
 }

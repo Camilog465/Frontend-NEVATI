@@ -7,6 +7,11 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ProductFormComponent } from './pages/products/product-form/product-form.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
 import { UserViewComponent } from './pages/user-view/user-view.component';
+// import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { authGuard } from './guards/auth.guard';
+// import { ProductFormEditComponent } from './pages/products/product-form-edit/product-form-edit.component';
+import { ProductListComponent } from './pages/products/product-list/product-list.component';
+
 
 
 export const routes: Routes = [
@@ -15,9 +20,13 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path : 'admin' , component: ProductFormComponent},
     { path: 'user/edit/:id', component: UserEditComponent},
-    { path: 'products/form', component: ProductFormComponent}, 
     { path: 'user/view', component: UserViewComponent},
     { path: '404', component: PageNotFoundComponent },
+    // { path: 'dashboard', component: DashboardComponent, canActivate:[ authGuard]},
+    { path: 'product/new', component: ProductFormComponent, canActivate:[ authGuard]},
+    { path: 'product/list', component: ProductListComponent, canActivate:[ authGuard]},
+    // { path: 'product/edit', component: ProductFormEditComponent, canActivate:[ authGuard]},
+    
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', redirectTo: '404', pathMatch: 'full' }
 ];

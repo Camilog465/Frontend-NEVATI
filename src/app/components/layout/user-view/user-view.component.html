@@ -1,0 +1,28 @@
+<div class="user-selector">
+    <a  routerLink='/register' class="btn-detalle" >Crear</a>
+    <div class="container-selector">
+        <h2>Seleccionar Usuario</h2>
+        <table>
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.username }}</td>
+            <td>
+                <div class="btn-user">
+                    <a  routerLink='/user/edit' routerLinkActive="router-link-active" class="btn-detalle" >Editar</a>
+                    <a  routerLink='#' routerLinkActive="router-link-active" class="btn-detalle" >Eliminar</a>
+                </div>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+  

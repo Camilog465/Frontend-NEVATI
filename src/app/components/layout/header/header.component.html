@@ -55,7 +55,7 @@
                         <img src="assets/images/image3.png" alt="buscar">
                     </button>
                 </form>
-                <ul class="menu-usuario">
+                <ul class="menu-usuario desplega">
                     <li class="me-gusta">
                         <a href="#">
                             <img src="assets/images/fi-rs-heart.png" alt="">
@@ -71,19 +71,36 @@
                             <img src="assets/images/fi-rs-shopping-cart.png" alt="">
                         </a>
                     </li>
-                    <li class="abmin" >
-                        <a [routerLink]="['Admin']" routerLinkActive="Active">
-                            <img class="admin" src="assets/images/support_807380 1.png" alt="">
-                        </a>
-                    </li>
-                    
-                     
+                    <li class="navbar ">
+                        <input type="checkbox" id="toggle-main-menu">
+                        <label for="toggle-main-menu" class="main-menu__container main-menu__open">
+                            <img src="assets/images/support_807380 1.png" alt="">
+                        </label>
+                        <label for="toggle-main-menu" class="main-menu__container main-menu__close">
+                            <img src="assets/images/support_807380 1.png" alt="">
+                        </label>
+                        <label for="toggle-main-menu" class="background">
+                            <span></span>
+                        </label>
 
-                    
+                        <ul class="main-menu main-menu__container">
+                            <li class="menu-item">
+                                <a [routerLink]="['/product/new']" routerLinkActive="Active" >REGISTER PRODUCT</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">REGISTER USERS</a>
+                            </li>
+                            <li class="menu-item">
+                                <a [routerLink]="['/product/list']" routerLinkActive="Active" >PRODUCT LIST</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">USERS LIST</a>
+                            </li>
+                        </ul>               
+                    </li>                                                  
                 </ul>
             </div>
         </div>
     </div>
 
 </header>
-   

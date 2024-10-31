@@ -1,0 +1,30 @@
+<div class="product-selector">
+    <a  routerLink='/products/form' class="btn-detalle" >Crear</a>
+    <div class="container-selector">
+        <h2>Seleccionar Producto</h2>
+        <table>
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Nombre Producto</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>${{ product.price }}</td>
+            <td>
+                <div class="btn-product">
+                    <a  routerLink='/product/edit' routerLinkActive="router-link-active" class="btn-detalle" >Editar</a>
+                    <a  routerLink='#' routerLinkActive="router-link-active" class="btn-detalle" >Eliminar</a>
+                </div>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+  
