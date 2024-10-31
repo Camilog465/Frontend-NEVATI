@@ -9,7 +9,7 @@
     --blanco: #ffffff ;
     --gris: #D9D9D9 ;
   }
-form.form.form-login.ng-untouched.ng-pristine.ng-invalid {
+main.main {
     padding: 1% 10% 1% 10%;
     background-image: url('../../../../public/assets/images/Captura\ de\ pantalla\ 2024-10-24\ 201548\ 1.png');
 }
