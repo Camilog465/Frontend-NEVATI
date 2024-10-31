@@ -1,0 +1,43 @@
+.user-selector {
+    margin: 2rem;
+  }
+  
+  .user-selector table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-selector th, .user-selector td {
+    border: .1rem solid #ccc;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .user-selector button {
+    margin-right: 1rem;
+  }
+  
+  .btn-detalle {
+    background-color: #29166F;
+    color: #fff;
+    border: none;
+    padding: .8rem 1.2rem;
+    border-radius: .4rem;
+    cursor: pointer;
+    border-radius: 3rem;
+    text-decoration: none;
+  }
+  
+  .btn-detalle:hover {
+    background-color: #0056b3;
+  }
+
+  .container-selector {
+    margin-top: 3rem;
+  }
+
+  .btn-user {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}

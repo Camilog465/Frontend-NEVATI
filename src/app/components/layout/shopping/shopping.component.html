@@ -1,0 +1,19 @@
+<div class="contenedor-historial-compras">
+    <h2>Historial de Compras</h2>
+    <div class="lista-compras">
+      <div class="compra-item" *ngFor="let compra of compras">
+        <div class="compra-imagen">
+            <img src="/assets/images/portatil-a.png" alt="portatil-1" class="history-img">
+        </div>
+        <div class="detalle-compra">
+          <p class="producto-nombre">{{ compra.nombreProducto }}</p>
+          <p class="producto-precio">Precio: {{ compra.precio | currency }}</p>
+          <p class="producto-fecha">Fecha: {{ compra.fechaCompra | date:'shortDate' }}</p>
+        </div>
+        <div class="compra-acciones">
+          <button class="btn-detalle">Ver Detalles</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

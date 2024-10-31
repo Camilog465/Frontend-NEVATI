@@ -1,0 +1,26 @@
+<div class="contenedor-metodos-pago">
+    <h2>Métodos de Pago</h2>
+    <div class="lista-metodos">
+      <div class="metodo-item" *ngFor="let metodo of metodos">
+        <div class="metodo-icono">
+          <img [src]="metodo.iconoUrl" alt="{{ metodo.nombre }}" />
+        </div>
+        <div class="detalle-metodo">
+          <p class="metodo-nombre">{{ metodo.nombre }}</p>
+          <p class="metodo-detalle">Número de tarjeta: {{ metodo.numeroTarjeta }}</p>
+        </div>
+        <div class="metodo-acciones">
+          <button class="btn-eliminar">Eliminar</button>
+        </div>
+      </div>
+    </div>
+    <div class="btn-pay">
+      <a  routerLink='/register' class="btn-detalle" >Agregar metodo de pago  
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+        <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  

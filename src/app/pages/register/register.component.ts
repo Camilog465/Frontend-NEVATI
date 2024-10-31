@@ -1,9 +1,10 @@
 
 
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -15,6 +16,7 @@ import { RouterLink } from '@angular/router';
 export class RegisterComponent {
   formData!: FormGroup;
   message: string | undefined;
+  suscription !: Subscription;
 
   constructor(private authService : AuthService ) {
     this.formData = new FormGroup({
@@ -28,11 +30,24 @@ export class RegisterComponent {
     });
   }
 
+  ngOnChanges (changes: SimpleChanges): void {
+    console.log('ngonchanges');
+  }
+  ngOnInit (): void {
+    console.log('ngoninit');
+  }
+  ngOnDestroy (): void {
+    console.log('ngondestroy');
+    if(this.suscription){
+      this.suscription.unsubscribe ()
+    }
+    
+  }
 
   handleSubmit() {
     if(this.formData.valid) {
       console.log(this.formData.value);
-      this.authService.registerUser(this.formData.value).subscribe((data) => {
+      this.suscription = this.authService.registerUser(this.formData.value).subscribe((data) => {
         console.log(data);
         this.message = data;
         setTimeout(()=>{

@@ -2,12 +2,12 @@ import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductService } from '../../../services/product.service';
-import { Router } from '@angular/router'; // Asegúrate de tener esto importado
+import { Router, RouterLink, RouterLinkActive } from '@angular/router'; // Asegúrate de tener esto importado
 
 @Component({
   selector: 'app-product-form',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, CommonModule],
+  imports: [ReactiveFormsModule, NgIf, CommonModule,RouterLink,RouterLinkActive],
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css'] 
 })
@@ -33,6 +33,7 @@ export class ProductFormComponent {
         response => {
           console.log('Producto registrado exitosamente'); 
           this.showModal = true; 
+          this.router.navigateByUrl( 'prduct/list' );
         },
         error => {
           console.error('Error al registrar el producto:', error); 
