@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   })
   export class ProductListComponent {
   
-    products: any [] = [];
+    products: any = [];
   
     constructor(private productService: ProductService, private router: Router){}
   
@@ -24,12 +24,12 @@ import { ReactiveFormsModule } from '@angular/forms';
       this.productService.getAllProducts ().
       subscribe ((data) =>{
         console.log(data);
-        this.products = data.data
+        this.products = data
       })
     }
     editar (id:any) {
-      console.log('Edita producto'+ id);
-      this.router.navigateByUrl ('product/product-edit/'+ id)
+      console.log(`Edita producto ${id}`);
+      this.router.navigateByUrl (`product/edit/${id}`)
   
     }
     eliminar (id: any){

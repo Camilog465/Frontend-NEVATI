@@ -1,0 +1,89 @@
+:root {
+    --scrollcolor: #fff;
+    --scrollbackground: #141e27;
+    --negro: #000000 ;
+    --amarillo: #FFC917 ;
+    --vinotinto: #8C0000 ;
+    --beige: #FAF3CD ;
+    --beige-claro: #FEFAEC ;
+    --blanco: #ffffff ;
+    --gris: #D9D9D9 ;
+  }
+  h2{
+    font-size: 7rem;
+    color: var(--vinotinto);
+    font-family: "Poiret One", sans-serif;
+    text-align: center;
+  }
+  
+  th.title1{
+    color: var(--vinotinto);
+    font-family: "Oswald", sans-serif;
+    font-size: 2.5rem;
+  
+  }
+  td.contenido{
+    color: var(--negro);
+    font-family: "Oswald", sans-serif;
+    font-size: 1.6rem;
+  }
+  .user-selector {
+      margin: 2rem;
+    }
+    
+    .user-selector table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .user-selector th, .user-selector td {
+      border: .1rem solid var(--amarillo);
+      padding: 1rem;
+      text-align: left;
+    }
+    
+    .user-selector button {
+      margin-right: 1rem;
+    }
+    
+    .btn-detalle {
+      background-color: #29166F;
+      color: #fff;
+      border: none;
+      padding: .8rem 1.2rem;
+      border-radius: .4rem;
+      cursor: pointer;
+      border-radius: 3rem;
+      text-decoration: none;
+    }
+  
+    a.btn-crea{
+      background-color:var(--amarillo);
+      color:var(--negro);
+      border: none;
+      padding: .8rem 1.2rem;
+      text-decoration: none;
+      font-family: "Oswald", sans-serif;
+    }
+    a.btn-edita{
+      background-color:var(--amarillo);
+      border: none;
+      padding: .8rem 1.2rem;
+      max-width: 53px;
+    }
+    .btn-elimina{
+      background-color:var(--vinotinto);
+      color:var(--negro);
+      border: none;
+      padding: .8rem 1.2rem;
+    }
+    .imagenicons{
+      max-width: 28px;
+    }
+  
+    .btn-user {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+  }
+  
