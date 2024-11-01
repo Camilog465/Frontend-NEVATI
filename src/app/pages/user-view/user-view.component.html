@@ -1,0 +1,39 @@
+<div class="user-selector"> 
+    <div class="container-selector">
+        <a  routerLink='/register' class="btn-crea" >CREAR NUEVO USUARIO</a>
+        <h2>USUARIOS</h2>
+        <table>
+        <thead>
+            <tr>
+            <th class="title1">Role</th> 
+            <th class="title1">Nombre</th>
+            <th class="title1">Apellido</th>
+            <th class="title1">Correo</th>
+            <th class="title1">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+            <td class="contenido">{{ user.role }}</td>
+            <td class="contenido">{{ user.name }}</td>
+            <td class="contenido">{{ user.lastname }}</td>
+            <td class="contenido">{{ user.username }}</td>
+            <td class="contenido">
+                <div class="btn-user">
+                    <a [routerLink]="['/user/edit', user._id]" class="btn-edita">
+                        <img class="imagenicons" src="assets/images/Broken Pencil.png" alt="">
+                    </a>   
+                    <button (click)="deleteUsers(user._id)" class="btn-elimina">
+                        <img class="imagenicons" src="assets/images/Trash.png" alt="">
+                    </button>
+                </div>
+            </td>
+            </tr>
+            <tr *ngIf="users.length === 0">
+                <td colspan="4">No hay usuarios disponibles.</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+  

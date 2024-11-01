@@ -1,35 +1,38 @@
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+<main class="main">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
    
-    <div class="register-container">
-        <h1>Registrar producto</h1>
-        <div class="field">
-            <label for="name-product" >Name product*</label> 
-            <input placeholder="Ingrese el nombre del producto" type="text" formControlName="name" id="name-product" />
-            <div class="error">
-                <div *ngIf="productForm.get( 'name' )?.invalid && ( productForm.get( 'name' )?.dirty || productForm.get( 'name' )?.touched )">
-                    <small *ngIf="productForm.get( 'name' )?.errors?.[ 'required' ]">
-                        El valor del campo nombre es obligatorio
-                    </small>
+        <div class="register-container">
+            <h1 class="register ">Registrar producto</h1>
+            <div class="field">
+                <label for="name-product" >Name product*</label> 
+                <input placeholder="Ingrese el nombre del producto" type="text" formControlName="name" id="name-product" />
+                <div class="error">
+                    <div *ngIf="productForm.get( 'name' )?.invalid && ( productForm.get( 'name' )?.dirty || productForm.get( 'name' )?.touched )">
+                        <small *ngIf="productForm.get( 'name' )?.errors?.[ 'required' ]">
+                            El valor del campo nombre es obligatorio
+                        </small>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="field">
-            <label for="description">Description</label>
-            <textarea placeholder="Ingrese la descripción del producto" formControlName="description" id="description"></textarea>
-        </div>
-        <div class="field">
-            <label for="price">Price*</label>
-            <input formControlName="price" min="0" max="10000000" type="number" id="price" />
-            <div class="error">
-                <div *ngIf="productForm.get( 'price' )?.invalid && ( productForm.get( 'price' )?.dirty || productForm.get( 'price' )?.touched )">
-                    <small *ngIf="productForm.get( 'price' )?.errors?.[ 'required' ]">
-                        El  valor del campo precio es obligatorio
-                    </small>
-                    <small *ngIf="productForm.get( 'price' )?.errors?.[ 'min' ]">
-                        El  valor del campo precio no debe ser negativo
-                    </small>
+            <div class="field">
+                <label for="description">Description</label>
+                <textarea placeholder="Ingrese la descripción del producto" formControlName="description" id="description"></textarea>
+            </div>
+            <div class="field">
+                <label for="price">Price*</label>
+                <input formControlName="price" min="0" max="10000000" type="number" id="price" />
+                <div class="error">
+                    <div *ngIf="productForm.get( 'price' )?.invalid && ( productForm.get( 'price' )?.dirty || productForm.get( 'price' )?.touched )">
+                        <small *ngIf="productForm.get( 'price' )?.errors?.[ 'required' ]">
+                            El  valor del campo precio es obligatorio
+                        </small>
+                        <small *ngIf="productForm.get( 'price' )?.errors?.[ 'min' ]">
+                            El  valor del campo precio no debe ser negativo
+                        </small>
+                    </div>
                 </div>
             </div>
+
         </div>
 
         <div class="field">
@@ -92,9 +95,7 @@
                     <small *ngIf="productForm.get( 'category' )?.errors?.[ 'required' ]">
                         El  valor del campo categoria es obligatorio
                     </small>
-                </div>
-            </div>
-        </div>
+
         <div class="field"> 
             <label for="">Image Product</label>
             
@@ -105,3 +106,15 @@
         </div>
     </div>
 </form>
+
+    </form>
+    <div class="modal" [ngClass]="{'show': showModal}">
+        <div class="modal-content">
+            <span class="close" (click)="closeModal()">&times;</span>
+            <h2>¡Registro Exitoso!</h2>
+            <p>Producto registrado correctamente.</p>
+            <button class="modal-btn" (click)="handleAccept()">Aceptar</button> <!-- Cambiado aquí -->
+        </div>
+    </div>
+</main>
+

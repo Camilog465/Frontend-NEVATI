@@ -1,10 +1,19 @@
+:root {
+  --scrollcolor: #fff;
+  --scrollbackground: #141e27;
+  --negro: #000000 ;
+  --amarillo: #FFC917 ;
+  --vinotinto: #8C0000 ;
+  --beige: #FAF3CD ;
+  --beige-claro: #FEFAEC ;
+  --blanco: #ffffff ;
+  --gris: #D9D9D9 ;
+}
+main.main {
+  padding: 2% 10%;
+  background-image: url("../../../../../public/assets/images/Captura\ de\ pantalla\ 2024-10-24\ 201548\ 2.png");
+}
 form {
-    padding: 2rem;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
     font-family: 'Oswald', sans-serif;
 
     .field {
@@ -27,16 +36,17 @@ form {
 }
 
 .btn-register-submit {
-    width: 100%;
-    padding: 1rem;
-    background-color: #29166F;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.6rem;
-    font-family: 'Oswald', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 1rem;
+  background-color: #8C0000;
+  color:#FFC917;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  font-family: 'Oswald', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
 .btn-register-submit:hover {
@@ -46,18 +56,14 @@ form {
     width: 100%;
     max-width: 500px;
     margin: 5rem auto;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
     text-align: center;
 }
 
-h1 {
-    font-size: 2.4rem;
+h1.register {
+    font-size: 7rem;
     margin-bottom: 2rem;
-    color: #29166F;
-    font-family: 'Oswald', sans-serif;
+    color: #8C0000;
+    font-family: "Poiret One", sans-serif;
     align-content: center;
 }
 
@@ -68,10 +74,11 @@ h1 {
 
 label {
     display: block;
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: #333;
+    color:#8C0000;
+    text-align: left;
 }
 
 input,
@@ -122,7 +129,6 @@ select:focus{
   
   .modal-content h2 {
     margin-bottom: 1rem;
-    color: #29166F;
     font-family: 'Oswald', sans-serif;
   }
   
@@ -140,6 +146,7 @@ select:focus{
     border-radius: 5px;
     font-size: 1.4rem;
     cursor: pointer;
+    
   }
   
   .modal-btn:hover {
@@ -152,9 +159,10 @@ select:focus{
     right: 15px;
     font-size: 2rem;
     cursor: pointer;
-    color: #777;
   }
   
-  .close:hover {
-    color: #29166F;
-  }
+  svg.bi.bi-arrow-left {
+    position: absolute;
+    left: 44rem;
+    top: 24rem;
+}
