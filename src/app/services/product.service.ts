@@ -13,24 +13,15 @@ export class ProductService {
 
     constructor(private http: HttpClient) {
         this.token = localStorage.getItem ('token') || '';
-        this.headers = new HttpHeaders ().set ('X-token',this.token)
+        this.headers = new HttpHeaders ().set ('X-Token',this.token)
      }
 
     getAllProducts(){
         return this.http.get<any>('http://localhost:3000/api/products')
     }
 
-    registerProduct(productData: Product): Observable<any> {
-         return this.http.post<any>('http://localhost:3000/api/products', productData, {headers:this.headers})
-        .pipe(
-            tap((response) => {
-                console.log('Respuesta del servidor:', response); // Imprimir la respuesta del servidor
-            }),
-            catchError(error => {
-                console.error('Error al registrar el producto:', error);
-                return of('Error al registrar el producto');
-            })
-        );
+    registerProduct(productData: Product) {
+        return this.http.post<any>('http://localhost:3000/api/products', productData, {headers: this.headers});
     }
 
     deleteProduct (id: any){

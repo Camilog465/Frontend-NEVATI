@@ -31,6 +31,25 @@
                 </div>
             </div>
         </div>
+
+        <div class="field">
+            <label for="size">Size*</label>
+            <select formControlName="size" id="size" placeholder="Ingrese el tamaño del producto">
+                <option value="Sencilla">Sencilla (1.70x2.60) </option>
+                <option value="Semidoble">Semidoble (1.90x2.60)</option>
+                <option value="Doble">Doble (2.10x2.60) </option>
+                <option value="Queen">Queen (2.30x260) </option>
+                <option value="King">King (2.70x2.70) </option>
+            </select>
+            <div class="error">
+                <div *ngIf="productForm.get( 'size' )?.invalid && ( productForm.get( 'size' )?.dirty || productForm.get( 'size' )?.touched )">
+                    <small *ngIf="productForm.get( 'size' )?.errors?.[ 'required' ]">
+                        El  valor del campo size es obligatorio
+                    </small>
+                </div>
+            </div>
+        </div>
+
         <div class="field">
             <label for="quantity">Quantity*</label>
             <input formControlName="quantity" min="1" max="100" type="number" id="quantity" />
@@ -45,14 +64,28 @@
                 </div>
             </div>
         </div>
+
+        <div class="field">
+            <label for="quality">Quality*</label>
+            <select formControlName="quality" id="quality" placeholder="Ingrese la calidad del producto">
+                <option value="beta">Beta</option>
+                <option value="alegro">Alegro</option>
+            </select>
+            <div class="error">
+                <div *ngIf="productForm.get( 'quality' )?.invalid && ( productForm.get( 'quality' )?.dirty || productForm.get( 'quality' )?.touched )">
+                    <small *ngIf="productForm.get( 'quality' )?.errors?.[ 'required' ]">
+                        El  valor del campo quality es obligatorio
+                    </small>
+                </div>
+            </div>
+        </div>
+
         <div class="field">
             <label for="category">Category*</label>
             <select formControlName="category" id="category" placeholder="Ingrese la categoria del producto">
-                <option value="tecnology">Tecnology</option>
-                <option value="vegetables">Vegetables</option>
-                <option value="fruits">Fruits</option>
-                <option value="home">Home</option>
-                <option value="pharmacy">Pharmacy</option>
+                <option value="tecnology">Sabanas</option>
+                <option value="vegetables">Colchas</option>
+                <option value="fruits">Accesorios</option>
             </select>
             <div class="error">
                 <div *ngIf="productForm.get( 'category' )?.invalid && ( productForm.get( 'category' )?.dirty || productForm.get( 'category' )?.touched )">
@@ -64,19 +97,11 @@
         </div>
         <div class="field"> 
             <label for="">Image Product</label>
-            <!-- <input type="file" /> -->
-            <!-- <input formControlName="urlImage" type="text" id="image"/> -->
+            
+            
         </div>
         <div class="field">
             <button class="btn-register-submit" type="submit" [disabled]="productForm.invalid" >Register</button>
         </div>
     </div>
 </form>
-<div class="modal" [ngClass]="{'show': showModal}">
-    <div class="modal-content">
-        <span class="close" (click)="closeModal()">&times;</span>
-        <h2>¡Registro Exitoso!</h2>
-        <p>Producto registrado correctamente.</p>
-        <button class="modal-btn" (click)="handleAccept()">Aceptar</button> <!-- Cambiado aquí -->
-    </div>
-</div>

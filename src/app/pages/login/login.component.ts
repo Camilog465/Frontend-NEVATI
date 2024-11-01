@@ -1,6 +1,6 @@
 import { Component, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../services/auth.service'
 import { Subscription } from 'rxjs';
 
@@ -17,7 +17,7 @@ export class LoginComponent {
   suscrption !: Subscription;
   
 
-  constructor(private authservice: AuthService) {
+  constructor(private authservice: AuthService, private router:Router) {
     this.formData = new FormGroup({
       username: new FormControl( '', [ Validators.required, Validators.email ] ),
       password: new FormControl( '', [ Validators.required, Validators.minLength( 8 ), Validators.maxLength( 20 ) ] )
@@ -47,9 +47,10 @@ export class LoginComponent {
          this.message = '';
 
        },2000)
+       this.router.navigateByUrl('home')
       });
+
       this.formData.reset();
-    
      }
    } 
    

@@ -1,6 +1,6 @@
 import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, RequiredValidator, Validators } from '@angular/forms';
 import { ProductService } from '../../../services/product.service';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router'; // Asegúrate de tener esto importado
 
@@ -17,31 +17,24 @@ export class ProductFormComponent {
   
   constructor(private productService: ProductService, private router: Router) { // Inyección correcta del Router
     this.productForm = new FormGroup({
-      name: new FormControl('', [ Validators.required ]),
+      name: new FormControl(''),
       description: new FormControl(''),
-      price: new FormControl(0, [ Validators.required, Validators.min(0) ]),
-      quantity: new FormControl(1, [ Validators.required, Validators.min(1) ]),
-      category: new FormControl('non-category', [ Validators.required ]),
-      urlImage: new FormControl('')
+      price: new FormControl(0),
+      size: new FormControl(''),
+      quality: new FormControl(''),
+      quantity: new FormControl(1),
+      category: new FormControl('')
     });
   }
 
   onSubmit() {
     if (this.productForm.valid) {
       const formData = this.productForm.value;
-      this.productService.registerProduct(formData).subscribe(
-        response => {
-          console.log('Producto registrado exitosamente'); 
-          this.showModal = true; 
-          this.router.navigateByUrl( 'prduct/list' );
-        },
-        error => {
-          console.error('Error al registrar el producto:', error); 
-        }
-      );
-    } else {
-      console.log('El formulario no es válido');
-    }
+      console.log( formData );
+      this.productService.registerProduct(formData).subscribe( data => {
+        console.log( data );
+      });
+    } 
   }
 
   closeModal() {
