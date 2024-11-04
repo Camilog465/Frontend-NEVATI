@@ -10,17 +10,17 @@
         <div class="menu-items">
             <ul class="menu-items-principal">
                 <li class="items">
-                    <a class="items-menu" href="./catalogo-sabanas.html">
+                    <a class="items-menu" [routerLink]="['/sabanas']" routerLinkActive="router-link-active" >
                         SABANAS
                     </a>
                 </li>
                 <li class="items l">
-                    <a class="items-menu" href="#">
+                    <a class="items-menu" [routerLink]="['/colchas']" routerLinkActive="router-link-active" >
                         COLCHA ESPAÑOLA
                     </a>
                 </li>
                 <li class="items">
-                    <a class="items-menu" href="#">
+                    <a class="items-menu" [routerLink]="['/accesorios']" routerLinkActive="router-link-active" >
                         ACCESORIOS
                     </a>
                 </li>
@@ -84,12 +84,12 @@
                         </label>
 
                         <ul class="main-menu main-menu__container">
-                            <li class="menu-item">
+                            <!-- <li class="menu-item">
                                 <a [routerLink]="['/product/new']" routerLinkActive="Active" >REGISTER PRODUCT</a>
                             </li>
                             <li class="menu-item">
                                 <a [routerLink]="['/register']" routerLinkActive="Active" >REGISTER USERS</a>
-                            </li>
+                            </li> -->
                             <li class="menu-item">
                                 <a [routerLink]="['/product/list']" routerLinkActive="Active" >PRODUCT LIST</a>
                             </li>

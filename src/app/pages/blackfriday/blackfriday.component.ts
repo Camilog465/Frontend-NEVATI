@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-blackfriday',
   standalone: true,
   imports: [RouterLink,RouterLinkActive],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './blackfriday.component.html',
+  styleUrl: './blackfriday.component.css'
 })
-export class HomeComponent {
+export class BlackfridayComponent {
 
 }

@@ -1,8 +1,8 @@
 export interface Product {
     name: string,
     description?: string,
-    price?: number,
-    quantity?: number,
+    price: number,
+    quantity: number,
     quality?: string,
     category?: string,
     urlImage?: string,

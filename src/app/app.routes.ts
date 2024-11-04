@@ -11,6 +11,10 @@ import { UserViewComponent } from './pages/user-view/user-view.component';
 import { authGuard } from './guards/auth.guard';
 import { ProductEditComponent } from './pages/products/product-form-edit/product-form-edit.component';
 import { ProductListComponent } from './pages/products/product-list/product-list.component';
+import { SabanasComponent } from './pages/sabanas/sabanas.component';
+import { ColchaComponent } from './pages/colcha/colcha.component';
+import { AccesoriosComponent } from './pages/accesorios/accesorios.component';
+import { BlackfridayComponent } from './pages/blackfriday/blackfriday.component';
 
 
 
@@ -18,10 +22,13 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path : 'admin' , component: ProductFormComponent},
-    { path: 'user/edit/:id', component: UserEditComponent},
-    { path: 'user/view', component: UserViewComponent},
+    { path: 'ofertas', component: BlackfridayComponent},
+    { path: 'user/edit/:id', component: UserEditComponent, canActivate:[ authGuard]},
+    { path: 'user/view', component: UserViewComponent, canActivate:[ authGuard]},
     { path: '404', component: PageNotFoundComponent },
+    { path: 'sabanas', component: SabanasComponent},
+    { path: 'colchas',component: ColchaComponent},
+    { path: 'accesorios', component: AccesoriosComponent},
     // { path: 'dashboard', component: DashboardComponent, canActivate:[ authGuard]},
     { path: 'product/new', component: ProductFormComponent, canActivate:[ authGuard]},
     { path: 'product/list', component: ProductListComponent, canActivate:[ authGuard]},
