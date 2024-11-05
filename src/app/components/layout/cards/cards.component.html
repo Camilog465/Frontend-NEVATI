@@ -2,7 +2,7 @@
     <div class="card-img-container">
         <img [src]="productValue.urlImage" [alt]="productValue.name" class="card-img">
         <div class="card-icons">
-            <a [routerLink]="['/computers/category/product', productValue._id]">
+            <a [routerLink]="['/sabanas/product', productValue._id]">
                 <i class="fas fa-search"></i>
             </a>
             <a (click)="addToCart(productValue)" style="cursor: pointer;">

@@ -1,0 +1,66 @@
+<main class="main">
+    <nav class="breadcrumb">
+        <ul>
+            <li><a routerLink="/home">Inicio</a></li>
+            <li><a routerLink="/computers">Computadores</a></li>
+            <li><a routerLink="/computers/category">Portatiles</a></li>
+            <li><a routerLink="/computers/category/product">Producto</a></li>
+        </ul>
+    </nav>
+    <div class="texto-p">
+        <h2>Producto</h2>
+    </div>
+    <div class="product-container">
+        <div class="product-gallery">
+            <img src="/assets/images/portatil-a.png" alt="Imagen principal" class="main-image" [src]="mainImage">
+            <div class="thumbnail-gallery">
+                <img src="/assets/images/portatil-a.png" alt="Miniatura 1" class="thumbnail" (click)="changeImage($event)">
+                <img src="/assets/images/portatil l.png" alt="Miniatura 2" class="thumbnail" (click)="changeImage($event)">
+                <img src="/assets/images/portatil-g.png" alt="Miniatura 3" class="thumbnail" (click)="changeImage($event)">
+                <img src="/assets/images/computador-t.png" alt="Miniatura 4" class="thumbnail" (click)="changeImage($event)">
+            </div>
+        </div>
+        <div class="product-details">
+            <h1>{{ product.name }}</h1>
+            <p class="product-price">{{ product.price | currency }}</p>
+            <p class="cantidad">Cantidad</p>
+            <div class="quantity-container">
+                <button class="quantity-button decrease" (click)="decreaseQuantity()">-</button>
+                <input type="number" class="quantity-input" [(ngModel)]="quantity" min="1">
+                <button class="quantity-button increase" (click)="increaseQuantity()">+</button>
+            </div> 
+            <div class="product-actions">
+                <button class="btn-primary" (click)="addToCart()">Añadir al carrito</button>
+                <button class="btn-secondary" (click)="buyNow()">Comprar ahora</button>
+            </div>
+        </div>
+    </div> 
+    <div class="product-tabs">
+        <div class="buttons-products">
+            <div class="btns">
+                <button class="tab" (click)="setActiveTab('description')">Descripción</button>
+                <button class="tab" (click)="setActiveTab('validation')">Valoraciones</button>
+                <button class="tab" (click)="setActiveTab('specifications')">Especificaciones</button>
+            </div>
+            <div class="btn-description">
+                <div *ngIf="mostrarDescription">
+                    <div class="tab-panel-des">
+                        <h2>Descripción del producto</h2>
+                        <p class="description-pro">{{ product.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="same-products">
+        <div class="texto-p">
+            <h2>Productos relacionados</h2>
+        </div>
+        <div class="cards-same-products">
+            @for (product of products; track $index) {
+                <app-cards [productValue]="product" ></app-cards>
+               }
+        </div>
+    </div>
+</main>

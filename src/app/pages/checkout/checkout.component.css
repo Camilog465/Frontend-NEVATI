@@ -1,0 +1,145 @@
+.checkout-container {
+    max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 2rem auto;
+    padding: 2rem;
+    display: flex; /* Usa flexbox para alinear el resumen a la derecha */
+    gap: 2rem; /* Espacio entre las secciones */
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkout-content {
+    flex: 1; /* Permite que esta sección use el espacio restante */
+  }
+  
+  .section-title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 0.5rem;
+  }
+  
+  .section {
+    margin-bottom: 3rem;
+  }
+  
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .product-item:last-child {
+    border-bottom: none;
+  }
+  
+  .product-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .product-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .quantity-button {
+    background-color: #e5e7eb;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+  
+  .payment-method {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .payment-radio {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  
+  .payment-radio input[type="radio"] {
+    accent-color: #3b82f6;
+  }
+  
+  .order-summary {
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 300px; /* Ancho fijo para el resumen */
+  }
+  
+  .order-summary div {
+    display: flex;
+    justify-content: space-between;
+    color: #1f2937;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .purchase-button {
+    width: 100%;
+    background-color: #1d4ed8;
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .purchase-button:hover {
+    background-color: #1e40af;
+  }
+  .remove-button{
+    padding: 0.75rem 1.5rem; 
+    margin: 1rem 0 0 1rem; 
+    font-size: 1rem; 
+    color: #fff; 
+    background: linear-gradient(#CD1023, #ca4250d5);
+    text-decoration: none; 
+    border-radius: 0.4rem; 
+    border: none; 
+    cursor: pointer; 
+    transition: background 0.3s ease; 
+  }
+  
