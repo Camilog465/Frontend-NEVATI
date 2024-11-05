@@ -14,6 +14,10 @@
     margin: 0;
     height: 100vh;
   }
+  .cards {
+    display: flex;
+    justify-content: space-around;
+}
 body {
     background:var(--beige-claro);
   }

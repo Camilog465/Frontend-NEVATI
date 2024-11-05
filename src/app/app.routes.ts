@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ProductFormComponent } from './pages/products/product-form/product-form.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
 import { UserViewComponent } from './pages/user-view/user-view.component';
-// import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
 import { authGuard } from './guards/auth.guard';
 import { ProductEditComponent } from './pages/products/product-form-edit/product-form-edit.component';
 import { ProductListComponent } from './pages/products/product-list/product-list.component';
@@ -29,7 +29,6 @@ export const routes: Routes = [
     { path: 'sabanas', component: SabanasComponent},
     { path: 'colchas',component: ColchaComponent},
     { path: 'accesorios', component: AccesoriosComponent},
-    // { path: 'dashboard', component: DashboardComponent, canActivate:[ authGuard]},
     { path: 'product/new', component: ProductFormComponent, canActivate:[ authGuard]},
     { path: 'product/list', component: ProductListComponent, canActivate:[ authGuard]},
     { path: 'product/edit/:id', component: ProductEditComponent, canActivate:[ authGuard]},

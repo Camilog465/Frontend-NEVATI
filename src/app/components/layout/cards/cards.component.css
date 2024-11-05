@@ -1,0 +1,132 @@
+/** Cards*/
+.card{
+    margin: 2rem 0 0 1rem;
+}
+.card-img-container::after {
+   display: none;
+}
+@media (max-width: 768px) {
+    .breadcrumb {   
+        width: 50%;
+    }
+}
+/** Cards*/
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    justify-content: center; 
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    border: .1rem solid #ddd;
+    border-radius: .8rem;
+    overflow: hidden;
+    box-shadow: 0 .4rem .8rem #0000001a;
+    max-width: 30rem;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 .6rem 1.2rem #ec0a0a33;
+}
+.card-img {
+    width: 100%;
+    height: auto;
+}
+.card-body {
+    padding: 1rem;
+
+}
+.card-title {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #000000;
+    font-weight: 600;
+}
+.card-text {
+    font-size: 1.3rem;
+    color: #666;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+.card-img-container {
+    position: relative;
+} 
+.card-icons {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+.card-icons i {
+    font-size: 1.5rem;
+    color: #fff;
+    background: #00000080;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.card-price {
+    font-size: 2rem;
+    font-weight: 600;
+    transition: 1s;
+}
+.card-icons i{
+    opacity: 0;
+    transition: .3s ease;
+}
+.card-icons i:hover {
+    background: #CD1023;
+    color: black;
+    transition: 1s;
+    transform: scale(1.2);
+}     
+.card:hover .card-icons i{
+    opacity: 1;
+} 
+.card-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0 0 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background:linear-gradient(#CD1023, #ca4250d5) ;
+    text-decoration: none;
+    border-radius: .4rem;
+    transition: 1s, transform 0.3s ease;
+}
+.card-button:hover {
+    background: linear-gradient( #29166F, #31216b94);
+    box-shadow: 0 .4rem .6rem #0000004d;
+    transform: translateY(-0.3rem) scale(1.1);
+    font-size: 1.2rem;
+}
+.card-body:hover .card-title {
+    color: #000000;
+}
+.card-body:hover .card-text {
+    color: #333;
+}
+.card-container::after {
+    content: "";
+    display: none;
+    width: 50%;
+    height: .5rem;
+    margin: 2rem auto;
+    background: #000000;
+    border-radius: 1rem;
+    visibility: 0;
+}
+@media (max-width: 768px) {
+.card-container {
+    gap: 2rem;
+}
+}

@@ -1,10 +1,10 @@
 export interface Product {
     name: string,
-    description?: string,
+    description: string,
     price: number,
     quantity: number,
-    quality?: string,
-    category?: string,
+    quality: string,
+    category: string,
     urlImage?: string,
     state?: string,
     createdAt?: string,
