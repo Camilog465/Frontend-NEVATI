@@ -44,15 +44,22 @@ export class UserService {
     }
     
     
-    getUserById(userId: string): Observable<Response> {
+    getUserById(userId: string): Observable<User | any > {
         const token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             'X-Token': token ? token : '',
         });
-        return this.http.get<Response>(`http://localhost:3000/api/users/${userId}`, { headers });
+        // return this.http.get<Response>(`http://localhost:3000/api/users/${userId}`, { headers });
+        return this.http.get<Response>(`http://localhost:3000/api/users/${userId}`,{ headers })
+        .pipe(
+            map( ( data ) => {
+                return data.data
+            }),
+            catchError( err => of( [] ) )
+        );
     }
 
-    editUser(userId: string, userData: User): Observable<Response> { 
+    editUser(userId: string, userData: User): Observable<any> { 
         const token = localStorage.getItem('token');
         const headers = new HttpHeaders({
             'X-Token': token ? token : '',

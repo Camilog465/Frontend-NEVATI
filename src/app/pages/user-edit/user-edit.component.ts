@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { User } from '../../interfaces/user';
@@ -9,7 +9,7 @@ import { User } from '../../interfaces/user';
 @Component({
   selector: 'app-user-edit',
   standalone: true,
-  imports: [RouterLink, CommonModule, ReactiveFormsModule],
+  imports: [RouterLink, CommonModule, ReactiveFormsModule,RouterLinkActive],
   templateUrl: './user-edit.component.html',
   styleUrl: './user-edit.component.css'
 })
@@ -31,7 +31,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
       username: new FormControl({ value: '', disabled: true }),
       phone: new FormControl('', [Validators.required, Validators.minLength(10)]),
       address: new FormControl('', [Validators.required]),
-      rol: new FormControl('', [Validators.required])
+      role: new FormControl('', [Validators.required])
     });
   }
 
@@ -43,25 +43,21 @@ export class UserEditComponent implements OnInit, OnDestroy {
   }
 
   loadUser(userId: string): void {
-    this.subscription = this.userService.getUserById(userId).subscribe(
-      (response) => {
-        if (response.ok && response.data) {
-          this.userEditForm.patchValue({
-            name: response.data.name,
-            lastname: response.data.lastname,
-            username: response.data.username, 
-            phone: response.data.phone,
-            address: response.data.address,
-            rol: response.data.role 
-          });
-        } else {
-          console.error('Usuario no encontrado o error en la respuesta');
-        }
-      },
-      error => {
-        console.error('Error al obtener el usuario:', error);
-      }
-    );
+    console.log(userId)
+    this.subscription = this.userService
+      .getUserById(userId)
+      .subscribe(({ name, lastname, username, phone, address, role }) => {
+     
+  
+        this.userEditForm.setValue({
+          name, 
+          lastname, 
+          username, 
+          phone, 
+          address, 
+          role
+        });
+    });
 }
 
 
@@ -96,7 +92,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
   handleAccept() {
     this.closeModal();
     this.userEditForm.reset();
-    this.router.navigate(['/dashboard']);  
+    this.router.navigate(['/user/view']);  
   }
 
   ngOnDestroy() {

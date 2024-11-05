@@ -3,13 +3,13 @@
 import { Component, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { Router, RouterLink, Routes } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, Routes } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ RouterLink,  ReactiveFormsModule ],
+  imports: [ RouterLink,  ReactiveFormsModule,  RouterLinkActive ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -53,7 +53,7 @@ export class RegisterComponent {
         setTimeout(()=>{
           this.message = '';
         },2000)
-        this.router.navigateByUrl('register');
+        this.router.navigateByUrl('login');
     
     });
     this.formData.reset();

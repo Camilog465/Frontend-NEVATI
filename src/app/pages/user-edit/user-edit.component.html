@@ -47,22 +47,12 @@
 
             <div class="form-group">
                 <label for="rol">Rol*</label>
-                <input type="text" id="rol" formControlName="rol" placeholder="Editar el rol">
-                <div class="error" *ngIf="userEditForm.get('rol')?.invalid && (userEditForm.get('rol')?.dirty || userEditForm.get('rol')?.touched)">
-                    <small *ngIf="userEditForm.get('rol')?.errors?.['required']">El campo 'rol' es obligatorio</small>
+                <input type="text" id="role" formControlName="role" placeholder="Editar el role">
+                <div class="error" *ngIf="userEditForm.get('role')?.invalid && (userEditForm.get('role')?.dirty || userEditForm.get('role')?.touched)">
+                    <small *ngIf="userEditForm.get('role')?.errors?.['required']">El campo 'rol' es obligatorio</small>
                 </div>
             </div>           
-            <button class="btn-register-submit" type="submit" [disabled]="userEditForm.invalid ">Editar</button>
+            <button [routerLink]="['/user/view']" routerLinkActive="router-link-active"  class="btn-register-submit" type="submit" [disabled]="userEditForm.invalid ">Editar</button>
         </form>
-        <div class="modal" [ngClass]="{'show': showModal}">
-            <div class="modal-content">
-              <span class="close" (click)="closeModal()">&times;</span>
-              <h2>¡Edicción Exitosa!</h2>
-              <p>Lo editaste correctamente.</p>
-              <button (click)="handleAccept()" class="modal-btn">Aceptar</button>
-            </div>
-          </div>
-          
-          
     </div>
 </main>
