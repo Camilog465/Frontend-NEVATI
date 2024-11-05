@@ -13,6 +13,12 @@
     padding: 2% 10%;
     background-image: url("../../../../../public/assets/images/Captura\ de\ pantalla\ 2024-10-24\ 201548\ 2.png");
   }
+  h1{
+    text-align: center;
+    color: var(--vinotinto);
+    font-family: "Poiret One", sans-serif;
+    font-size: 7rem;
+  }
   form {
       font-family: 'Oswald', sans-serif;
   
@@ -84,7 +90,6 @@
   input,
   textarea,
   select{
-      width: 100%;
       padding: 1rem;
       border-radius: 5px;
       border: 1px solid #ccc;

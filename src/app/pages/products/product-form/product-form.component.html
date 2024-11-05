@@ -1,130 +1,133 @@
-<form 
-    class="form form-product"
-    [formGroup]="productForm" 
-    (ngSubmit)="onSubmit()"
->
-<!-- 
-    [formGroup]="productForm": Vincula el formulario a la clase 
-    (ngSubmit)="onSubmit()": Vincula la accion de enviar los datos del formulario
-    [] >> Si ven esto es una directiva
-    () >> Si ven esto es un evento
--->
-    <h1>Registro de prodcuto</h1>
-   <div class="form-content">
-        <div class="field">
-            <label for="name-product">Name product*</label>
-            <input type="text" formControlName="name" id="name-product" />
-            <div class="error">
+<main class="main">
+    <div class="register-container">
+        <h1>Registro de producto</h1>
+        <form 
+        class="form form-product"
+        [formGroup]="productForm" 
+        (ngSubmit)="onSubmit()"
+    >
+    <!-- 
+        [formGroup]="productForm": Vincula el formulario a la clase 
+        (ngSubmit)="onSubmit()": Vincula la accion de enviar los datos del formulario
+        [] >> Si ven esto es una directiva
+        () >> Si ven esto es un evento
+    -->
+       <div class="form-content">
+            <div class="field">
+                <label for="name-product">Name product*</label>
+                <input type="text" formControlName="name" id="name-product" />
+                <div class="error">
+                    <!-- Validar los estados del campo input >> name -->
+                    <div *ngIf="productForm.get( 'name' )?.invalid && ( productForm.get( 'name' )?.dirty || productForm.get( 'name' )?.touched )" >
+                        <small *ngIf="productForm.get( 'name' )?.errors?.[ 'required' ]">
+                            El campo 'name' es obligatorio
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label for="description">Description</label>
+                <textarea formControlName="description" id="description"></textarea>
+            </div>
+            <div class="field">
+                <label for="price">Price*</label>
+                <input type="number" id="price" formControlName="price" />
+                <div class="error">
+                    <!-- Validar los estados del campo input >> name -->
+                    <div *ngIf="productForm.get( 'price' )?.invalid && ( productForm.get( 'price' )?.dirty || productForm.get( 'price' )?.touched )" >
+                        <!-- Valida las reglas establecidas para cada campo del formulario -->
+                        <small *ngIf="productForm.get( 'price' )?.errors?.[ 'required' ]">
+                            El valor del campo precio es obligatorio
+                        </small>
+                        <small *ngIf="productForm.get( 'price' )?.errors?.[ 'min' ]">
+                            El valor del campo precio no puede ser negativo
+                        </small>
+                    </div>
+                </div>
+            </div>
+    
+    
+            
+    
+            <div class="field">
+                <label for="size">Size*</label>
+                <select formControlName="size" id="size" placeholder="Ingrese la talla del producto">
+                    <option value="sencilla">Sencilla(170x260)</option>
+                    <option value="semidoble">Semidoble(190x260)</option>
+                    <option value="doble">Doble(210x260)</option>
+                    <option value="queen">Queen(230x260)</option>
+                    <option value="king">King(270x270)</option>
+                   
+                </select>
+                <div class="error">
+                    <div *ngIf="productForm.get( 'size' )?.invalid && ( productForm.get( 'size' )?.dirty || productForm.get( 'size' )?.touched )">
+                        <small *ngIf="productForm.get( 'size' )?.errors?.[ 'required' ]">
+                            El  valor del campo categoria es obligatorio
+                        </small>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="field">
+                <label for="category">Category*</label>
+                <select formControlName="category" id="category" placeholder="Ingrese la categoria del producto">
+                    <option value="sabanas">Sabanas</option>
+                    <option value="colchas">Colcha española</option>
+                    <option value="accesorios">Accesorios</option>
+                    
+                   
+                </select>
+                <div class="error">
+                    <div *ngIf="productForm.get( 'category' )?.invalid && ( productForm.get( 'category' )?.dirty || productForm.get( 'category' )?.touched )">
+                        <small *ngIf="productForm.get( 'category' )?.errors?.[ 'required' ]">
+                            El  valor del campo categoria es obligatorio
+                        </small>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="field">
+                <label for="quantity">Quantity*</label>
+                <input type="number" formControlName="quantity" id="quantity" />
                 <!-- Validar los estados del campo input >> name -->
-                <div *ngIf="productForm.get( 'name' )?.invalid && ( productForm.get( 'name' )?.dirty || productForm.get( 'name' )?.touched )" >
-                    <small *ngIf="productForm.get( 'name' )?.errors?.[ 'required' ]">
-                        El campo 'name' es obligatorio
-                    </small>
+                <div class="error">
+                    <div *ngIf="productForm.get( 'quantity' )?.invalid && ( productForm.get( 'quantity' )?.dirty || productForm.get( 'quantity' )?.touched )" >
+                        <!-- Valida las reglas establecidas para cada campo del formulario -->
+                        <small *ngIf="productForm.get( 'quantity' )?.errors?.[ 'required' ]">
+                            El valor del campo cantidad es obligatorio
+                        </small>
+                        <small *ngIf="productForm.get( 'quantity' )?.errors?.[ 'min' ]">
+                            El valor del campo cantidad no puede ser negativo
+                        </small>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="field">
-            <label for="description">Description</label>
-            <textarea formControlName="description" id="description"></textarea>
-        </div>
-        <div class="field">
-            <label for="price">Price*</label>
-            <input type="number" id="price" formControlName="price" />
-            <div class="error">
-                <!-- Validar los estados del campo input >> name -->
-                <div *ngIf="productForm.get( 'price' )?.invalid && ( productForm.get( 'price' )?.dirty || productForm.get( 'price' )?.touched )" >
-                    <!-- Valida las reglas establecidas para cada campo del formulario -->
-                    <small *ngIf="productForm.get( 'price' )?.errors?.[ 'required' ]">
-                        El valor del campo precio es obligatorio
-                    </small>
-                    <small *ngIf="productForm.get( 'price' )?.errors?.[ 'min' ]">
-                        El valor del campo precio no puede ser negativo
-                    </small>
+    
+            <div class="field">
+                <label for="quality">Quality*</label>
+                <select formControlName="quality" id="quality" placeholder="Ingrese la calidad del producto">
+                    <option value="alegro">Alegro</option>
+                    <option value="beta">Beta</option>
+                </select>
+                <div class="error">
+                    <div *ngIf="productForm.get( 'quality' )?.invalid && ( productForm.get( 'quality' )?.dirty || productForm.get( 'quality' )?.touched )">
+                        <small *ngIf="productForm.get( 'quality' )?.errors?.[ 'required' ]">
+                            El  valor del campo categoria es obligatorio
+                        </small>
+                    </div>
                 </div>
             </div>
-        </div>
-
-
-        
-
-        <div class="field">
-            <label for="size">Size*</label>
-            <select formControlName="size" id="size" placeholder="Ingrese la talla del producto">
-                <option value="sencilla">Sencilla(170x260)</option>
-                <option value="semidoble">Semidoble(190x260)</option>
-                <option value="doble">Doble(210x260)</option>
-                <option value="queen">Queen(230x260)</option>
-                <option value="king">King(270x270)</option>
-               
-            </select>
-            <div class="error">
-                <div *ngIf="productForm.get( 'size' )?.invalid && ( productForm.get( 'size' )?.dirty || productForm.get( 'size' )?.touched )">
-                    <small *ngIf="productForm.get( 'size' )?.errors?.[ 'required' ]">
-                        El  valor del campo categoria es obligatorio
-                    </small>
-                </div>
+            
+            <div class="field">
+                <label for="image">Image Product</label>
+                <input type="file" />
+                <!-- <input type="text" formControlName="urlImage" id="image" /> -->
             </div>
-        </div>
-
-        <div class="field">
-            <label for="category">Category*</label>
-            <select formControlName="category" id="category" placeholder="Ingrese la categoria del producto">
-                <option value="sabanas">Sabanas</option>
-                <option value="colchas">Colcha española</option>
-                <option value="accesorios">Accesorios</option>
-                
-               
-            </select>
-            <div class="error">
-                <div *ngIf="productForm.get( 'category' )?.invalid && ( productForm.get( 'category' )?.dirty || productForm.get( 'category' )?.touched )">
-                    <small *ngIf="productForm.get( 'category' )?.errors?.[ 'required' ]">
-                        El  valor del campo categoria es obligatorio
-                    </small>
-                </div>
+            <div class="field">
+                <button class="btn-register-submit" type="submit" [disabled]="productForm.invalid">Register</button>
             </div>
-        </div>
-
-        <div class="field">
-            <label for="quantity">Quantity*</label>
-            <input type="number" formControlName="quantity" id="quantity" />
-            <!-- Validar los estados del campo input >> name -->
-            <div class="error">
-                <div *ngIf="productForm.get( 'quantity' )?.invalid && ( productForm.get( 'quantity' )?.dirty || productForm.get( 'quantity' )?.touched )" >
-                    <!-- Valida las reglas establecidas para cada campo del formulario -->
-                    <small *ngIf="productForm.get( 'quantity' )?.errors?.[ 'required' ]">
-                        El valor del campo cantidad es obligatorio
-                    </small>
-                    <small *ngIf="productForm.get( 'quantity' )?.errors?.[ 'min' ]">
-                        El valor del campo cantidad no puede ser negativo
-                    </small>
-                </div>
-            </div>
-        </div>
-
-        <div class="field">
-            <label for="quality">Quality*</label>
-            <select formControlName="quality" id="quality" placeholder="Ingrese la calidad del producto">
-                <option value="alegro">Alegro</option>
-                <option value="beta">Beta</option>
-            </select>
-            <div class="error">
-                <div *ngIf="productForm.get( 'quality' )?.invalid && ( productForm.get( 'quality' )?.dirty || productForm.get( 'quality' )?.touched )">
-                    <small *ngIf="productForm.get( 'quality' )?.errors?.[ 'required' ]">
-                        El  valor del campo categoria es obligatorio
-                    </small>
-                </div>
-            </div>
-        </div>
-        
-        <div class="field">
-            <label for="image">Image Product</label>
-            <input type="file" />
-            <!-- <input type="text" formControlName="urlImage" id="image" /> -->
-        </div>
-        <div class="field">
-            <button type="submit" [disabled]="productForm.invalid">Register</button>
-        </div>
-   </div>
-</form>
-
+       </div>
+    </form>
+    </div>
+</main>
 

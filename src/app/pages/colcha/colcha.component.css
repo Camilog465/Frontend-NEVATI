@@ -1,0 +1,202 @@
+:root {
+    --scrollcolor: #fff;
+    --scrollbackground: #141e27;
+    --negro: #000000 ;
+    --amarillo: #FFC917 ;
+    --vinotinto: #8C0000 ;
+    --beige: #FAF3CD ;
+    --beige-claro: #FEFAEC ;
+    --blanco: #ffffff ;
+    --gris: #D9D9D9 ;
+  }
+ html, body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+  }
+body {
+    background:var(--beige-claro);
+  }
+.title {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: system-ui;
+    font-weight: 300;
+    color: #fff;
+    margin: 4rem auto 1rem;
+    width: 85%;
+    max-width: 1280px;
+  }
+  section.nuestras-sabanas {
+    background-image: url('../../../../public/assets/images/image\ 25.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position-x: center;
+    background-size: cover;
+    display: flex;
+}
+.text-box-sab {
+    width: 60%;
+    margin: 10rem auto;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+}
+.Infography-sab {
+    display: block;
+    width: 80%;
+    margin: 10%;
+}
+
+article.title-sab {
+    font-family: "Poiret One", sans-serif;
+    font-size: 2.2rem;
+    margin: 0;
+}
+.content-sab {
+    font-size: 1.6rem;
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+    margin-top: 5rem;
+}
+.content-1-sab{
+    font-size: 2rem;
+    display: none;
+    font-family: "Oswald", sans-serif;
+}
+.content-3-sab{
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    border: transparent;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1rem;
+}
+.content-4-sab {
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #8C0000;
+}
+.sabanas-titulo-sab {
+    margin: 1rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.sabanas-subtitulo-sab {
+    font-family: "Oswald", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: auto;
+}
+@media ( min-width: 400px ) {
+
+    article.title-sab {
+        font-size: 2.8rem;
+        text-align: center;
+    }
+    
+}
+@media ( min-width: 550px ) {
+    .content-1-sab{
+        display: block;
+    }
+    .content-2-sab{
+        display: none;
+    }
+}
+@media ( min-width: 600px ) {
+    .sabanas-titulo-sab {
+        font-size: 2.4rem;
+    }
+    .sabanas-subtitulo-sab {
+        font-size: 1.6rem;
+    }
+    article.title-sab {
+        font-size: 7rem;
+        text-align: center;
+    }
+}
+@media ( min-width: 1500px ) {
+    .text-box-sab {
+        width: 50%;
+        margin: 10rem auto;
+        background-color: rgba(0, 0, 0, .5);
+        color: white;
+    }
+}
+.productos-titulo-cat{
+    display: flex;
+    font-family: "Oswald", sans-serif;
+    color: var(--vinotinto);
+    justify-content: center;
+    font-size: 3rem;
+}
+.productos-cat{
+    display: block;
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+
+}
+.productos-1-cat{
+    padding: 1rem 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.productos-2-cat{
+    padding: 1rem 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+a.producto-cat{
+    width: 80%;
+    margin: 5%;
+    padding: 5%;
+    background-color: var(--beige);
+    text-decoration: none;
+    color: var(--negro);
+    display: block;
+}
+.img-producto-cat{
+    width: 100%;
+}
+.title-producto-cat{
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.descrip-producto-cat{
+    margin: 0;
+    width: 70%;
+}
+.precio-cat{
+    font-size: 3.8rem;
+    margin: 0;
+}
+.envio-cat{
+    color: var(--vinotinto);
+    margin-top: 1rem;
+}
+@media (min-width: 450px){
+    .productos-1-cat{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .productos-2-cat{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    a.producto-cat{
+        width: 40%;
+        margin: 5%;
+        display: block;
+    }
+}
+  
