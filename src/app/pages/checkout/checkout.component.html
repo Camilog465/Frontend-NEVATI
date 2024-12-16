@@ -1,0 +1,58 @@
+<div class="checkout-container">
+  <div class="checkout-content">
+    <section class="section">
+      <h2 class="section-title">Resumen del Carrito</h2>
+      <div class="product-divider">
+        <div class="product-item" *ngFor="let item of groupItems()">
+          <div class="product-info">
+            <img [src]="item.info?.urlImage" alt="{{ item.info?.name }}" class="product-image" />
+            <span class="font-semibold">{{ item.info?.name }}</span>
+          </div>
+          <div class="quantity-controls">
+            <button class="quantity-button" (click)="decreaseQuantity(item)">-</button>
+            <span>{{ item.order }}</span>
+            <button class="quantity-button" (click)="increaseQuantity(item)">+</button>
+          </div>
+          <div class="product-info">
+            <span class="font-medium">{{ item.order }} x {{ item.info?.price | currency }}</span>
+            <button (click)="removeProduct(item)" class="remove-button">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </section>    
+    <section class="section">
+      <h2 class="section-title">Información de Envío</h2>
+      <form [formGroup]="shippingForm">
+        <input type="text" formControlName="name" placeholder="Nombre Completo" class="form-input" />
+        <input type="text" formControlName="address" placeholder="Dirección" class="form-input" />
+        <input type="text" formControlName="city" placeholder="Ciudad" class="form-input" />
+        <input type="tel" formControlName="phone" placeholder="Teléfono" class="form-input" />
+      </form>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Método de Pago</h2>
+      <div class="payment-method">
+        <label class="payment-radio">
+          <input type="radio" formControlName="paymentMethod" value="credit" />
+          <span>Tarjeta de Crédito/Débito</span>
+        </label>
+        <label class="payment-radio">
+          <input type="radio" formControlName="paymentMethod" value="paypal" />
+          <span>PayPal</span>
+        </label>
+      </div>
+    </section>
+  </div>
+
+  <aside class="order-summary">
+    <h2 class="section-title">Resumen del Pedido</h2>
+    <div>
+      <span>Total:</span>
+      <span>{{ total | currency }}</span>
+    </div>
+    <button (click)="completePurchase()" class="purchase-button">
+      Finalizar Compra
+    </button>
+  </aside>
+</div>

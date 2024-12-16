@@ -52,8 +52,9 @@ export class ProductService {
     }
 
     getProduct(productId: string): Observable<ResponsePro> {
-        return this.http.get<ResponsePro>(`http://localhost:3000/api/products`);
+        return this.http.get<ResponsePro>(`http://localhost:3000/api/products/${productId}`);
     }
+    
     
     getProductById(productId: string): Observable<Product | undefined | any > {
         return this.http.get<ResponsePro>(`http://localhost:3000/api/products/${productId}`)

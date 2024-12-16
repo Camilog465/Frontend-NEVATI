@@ -12,7 +12,12 @@
                 ACCESORIOS NEVATI HOME
             </div>
         </div>
-        <div class="productos-cat">
+        <div class="cards">
+            @for (product of products; track $index) {
+                <app-cards [productValue]="product" ></app-cards>
+            }
+        </div>
+        <!-- <div class="productos-cat">
             <div class="productos-1-cat">
                 <a class="producto-cat" href="#">
                     <div>
@@ -53,7 +58,7 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </div> -->
     </section>
 
 </main>

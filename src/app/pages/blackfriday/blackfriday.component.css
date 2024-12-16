@@ -99,6 +99,22 @@ article.title-sab {
     }
     
 }
+@media ( min-width: 450px ) {
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+     }
+    
+}
+@media (min-width: 900px ) {
+    .cards{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    } 
+}
 @media ( min-width: 550px ) {
     .content-1-sab{
         display: block;
@@ -204,7 +220,6 @@ a.producto-cat{
     background-repeat: no-repeat;
     background-position-x: center;
     background-size: cover;
-    width: 100%;
     height: 100%;
     padding: 5rem;
  }

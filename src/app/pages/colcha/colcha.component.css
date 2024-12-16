@@ -99,6 +99,15 @@ article.title-sab {
     }
     
 }
+@media ( min-width: 450px ) {
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+     }
+    
+}
 @media ( min-width: 550px ) {
     .content-1-sab{
         display: block;
@@ -118,6 +127,13 @@ article.title-sab {
         font-size: 7rem;
         text-align: center;
     }
+}
+@media (min-width: 900px ) {
+    .cards{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    } 
 }
 @media ( min-width: 1500px ) {
     .text-box-sab {

@@ -1,0 +1,73 @@
+.contenedor-historial-compras {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  h2 {
+    margin-bottom: 2rem;
+  }
+  
+  .lista-compras {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .compra-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .compra-imagen {
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+  }
+  
+  .compra-imagen img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: .5rem;
+  }
+  
+  .detalle-compra {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .producto-nombre {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  
+  .producto-precio,
+  .producto-fecha {
+    margin: .5rem 0;
+  }
+  
+  .compra-acciones {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-detalle {
+    background-color: #29166F;
+    color: #fff;
+    border: none;
+    padding: .8rem 1.2rem;
+    border-radius: .4rem;
+    cursor: pointer;
+    border-radius: 3rem;
+  }
+  
+  .btn-detalle:hover {
+    background-color: #0056b3;
+  }
+  

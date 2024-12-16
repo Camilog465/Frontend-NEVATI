@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-img-container">
+        <img [src]="productValue.urlImage" [alt]="productValue.name" class="card-img">
+        <div class="card-icons">
+            <a [routerLink]="['/sabanas/product', productValue._id]">
+                <i class="fas fa-search"></i>
+            </a>
+            <a (click)="addToCart(productValue)" style="cursor: pointer;">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </div>
+    </div>
+    <div class="card-body">
+        <h3 class="card-title">{{ productValue.name }}</h3>
+        <p class="card-text">{{ productValue.description }}</p>
+        <div class="prices">
+            <p class="card-price">{{ productValue.price | currency }}</p>
+        </div>
+        <div class="btn-buy">
+            <button (click)="buyNow()" class="card-button">Comprar</button>
+        </div>                        
+    </div>
+</div>

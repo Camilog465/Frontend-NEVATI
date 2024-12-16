@@ -359,7 +359,9 @@
          font-size: 3.4rem;
      }
      .productos{
-         display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
      }
      .productos-1{
          display: flex;
@@ -379,8 +381,15 @@
      .productos-titulo{
          font-size: 4rem;
      }
+     .cards{
+        display: flex;
+        justify-content: space-around;
+    }
      .productos{
          display: flex;
+         justify-content: space-around;
+         padding: 2rem 0rem;
+         flex-direction: row;
      }
      .productos-1{
          display: flex;

@@ -29,6 +29,13 @@
             <p>NUESTROS PRODUCTOS</p>
         </div>
         <div class="productos">
+            <div class="productos">
+                @for (product of products; track $index) {
+                    <app-cards [productValue]="product" ></app-cards>
+                }
+            </div>
+        </div>
+        <!-- <div class="productos">
             <div class="productos-1">
                 <a class="producto" href="#">
                     <div>
@@ -109,7 +116,7 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </div> -->
     </section>
     <section>
         <div class="pintas">

@@ -1,0 +1,36 @@
+<main class="main">
+    <div class="texto-p">
+        <h2>Producto</h2>
+    </div>
+    <div class="product-container">
+        <div class="product-gallery">
+            <img [src]="product.urlImage" [alt]="product.name" class="main-image">
+        </div>
+        <div class="product-details">
+            <h1>{{ product.name }}</h1>
+            <p>{{ product.description }}</p>
+            <p class="product-price">{{ product.price | currency }}</p>
+            <p class="cantidad">Cantidad</p>
+            <div class="quantity-container">
+                <button class="quantity-button decrease" (click)="decreaseQuantity()">-</button>
+                <input type="number" class="quantity-input" [(ngModel)]="quantity" min="1">
+                <button class="quantity-button increase" (click)="increaseQuantity()">+</button>
+            </div> 
+            <div class="product-actions">
+                <button class="btn-primary" (click)="addToCart()">Añadir al carrito</button>
+                <button class="btn-secondary" (click)="buyNow()">Comprar ahora</button>
+            </div>
+        </div>
+    </div> 
+    
+    <div class="same-products">
+        <div class="texto-p">
+            <h2>Productos relacionados</h2>
+        </div>
+        <div class="cards-same-products">
+            @for (product of products; track $index) {
+                <app-cards [productValue]="product" ></app-cards>
+               }
+        </div>
+    </div>
+</main>

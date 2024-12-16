@@ -15,88 +15,12 @@
                 Elaboradas en genero Alegro: Calidad premium en 200 hilos
             </div>
         </div>
-        <div class="productos-cat">
-            <div class="productos-1-cat">
-                <a class="producto-cat" href="#">
-                    <div>
-                        <img class="img-producto-cat" src="assets/images/triangulosgrises.png.jpeg" alt="">
-                    </div>
-                    <div>
-                        <div class="title-producto-cat">
-                            <p class="descrip-producto-cat">TRIANGULOS GRICES FONDO BLANCO</p>
-                            <div>
-                                <img src="assets/images/fi-rs-heart.png" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="precio-cat">00.0$</p>
-                            </div>
-                            <div class="envio-cat">ENVIO GRATIS</div>
-                        </div>
-                    </div>
-                </a>
-                <a class="producto-cat" href="#">
-                    <div>
-                        <img class="img-producto-cat" src="assets/images/circulos.png.jpeg" alt="">
-                    </div>
-                    <div>
-                        <div class="title-producto-cat">
-                            <p class="descrip-producto-cat">CIRCULOS GRICES-DORADOS FONDO BLANCO</p>
-                            <div>
-                                <img src="assets/images/corazon.png.jpeg" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="precio-cat">00.0$</p>
-                            </div>
-                            <div class="envio-cat">ENVIO GRATIS</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="productos-2-cat">
-                <a class="producto-cat" href="#">
-                    <div>
-                        <img class="img-producto-cat" src="assets/images/paris.png.jpeg" alt="">
-                    </div>
-                    <div>
-                        <div class="title-producto-cat">
-                            <p class="descrip-producto-cat">PARIS FONDO BLANCO</p>
-                            <div>
-                                <img src="assets/images/corazon.png.jpeg" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="precio-cat">00.0$</p>
-                            </div>
-                            <div class="envio-cat">ENVIO GRATIS</div>
-                        </div>
-                    </div>
-                </a>
-                <a class="producto-cat" href="#">
-                    <div>
-                        <img class="img-producto-cat" src="assets/images/mosaico.png.jpeg" alt="">
-                    </div>
-                    <div>
-                        <div class="title-producto-cat">
-                            <p class="descrip-producto-cat">MOSAICOS ROJOS-GRICES FONDO BLANCO</p>
-                            <div>
-                                <img src="assets/images/fi-rs-heart.png" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="precio-cat">00.0$</p>
-                            </div>
-                            <div class="envio-cat">ENVIO GRATIS</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+        <div class="cards">
+            @for (product of products; track $index) {
+                <app-cards [productValue]="product" ></app-cards>
+            }
         </div>
     </section>
 
 </main>
+
